@@ -12,7 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
+
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,10 +22,16 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository repository;
 
-    public Employee addEmployee(Employee employee)
+    public Employee addEmployee( @Valid Employee employee)
     {
-
-        return repository.save(employee);
+        if(repository.existsById(employee.getId()))
+        {
+            throw new UserServiceException("Employee with empID  ["+ employee.getId()+"]  already exists" );
+        }
+        else
+        {
+            return repository.save(employee);
+        }
     }
 
         public List<Employee> getEmployee(int pageNo, int pageSize, String sortBy)
@@ -47,19 +54,19 @@ public class EmployeeService {
 
     public String deleteEmployee(int id)
     {
-        if(repository.existsById(id)==true)
+        if(repository.existsById(id))
         {
             repository.deleteById(id);
-            return "Employee with employee Id " + id + " removed";
+            return "Employee with employee Id [" + id + "] removed";
         }
         else
-            throw new UserServiceException("Employee with employee ID = " +id+ " does not exist");
+            throw new UserServiceException("Employee with employee ID  [" +id+ "] does not exist");
     }
 
 
     public Employee updateEmployee(Employee employee)
     {
-        if(repository.existsById(employee.getId())==true)
+        if(repository.existsById(employee.getId()))
         {
             Employee existingEmployee = repository.findById(employee.getId()).orElse(null);
             existingEmployee.setName(employee.getName());
@@ -69,7 +76,7 @@ public class EmployeeService {
         }
         else
         {
-            throw new UserServiceException("Employee with employee ID = " + employee.getId() + " does not exist");
+            throw new UserServiceException("Employee with employee ID  [" + employee.getId() + "] does not exist");
         }
     }
 
