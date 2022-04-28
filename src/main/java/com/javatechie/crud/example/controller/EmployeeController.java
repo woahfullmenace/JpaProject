@@ -14,29 +14,17 @@ public class EmployeeController {
     private EmployeeService service;
 
     @PostMapping("/addEmployee")
-    public Employee addEmployee(@RequestBody Employee employee) {
+    public List<Employee> addEmployee(@RequestBody List<Employee> employee) {
         return service.saveEmployee(employee);
     }
 
-    @PostMapping("/addEmployees")
-    public List<Employee> addEmployees(@RequestBody List<Employee> employees) {
-        return service.saveEmployees(employees);
+
+    @GetMapping("/getEmployee")
+    public List<Employee> getEmployee(@RequestParam(required = false,defaultValue = "id") String filter)
+    {
+        return service.getEmployees(filter);
     }
 
-    @GetMapping("/Employees")
-    public List<Employee> findAllEmployees() {
-        return service.getEmployees();
-    }
-
-    @GetMapping("/EmployeeById/{id}")
-    public Employee findEmployeeById(@PathVariable int id) {
-        return service.getEmployeeById(id);
-    }
-
-    @GetMapping("/Employee/{name}")
-    public Employee findEmployeeByName(@PathVariable String name) {
-        return service.getEmployeeByName(name);
-    }
 
     @PutMapping("/update")
     public Employee updateEmployee(@RequestBody Employee employee) {
