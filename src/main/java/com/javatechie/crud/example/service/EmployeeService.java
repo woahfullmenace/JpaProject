@@ -3,6 +3,7 @@ package com.javatechie.crud.example.service;
 
 import com.javatechie.crud.example.entity.Employee;
 
+import com.javatechie.crud.example.handler.UserServiceException;
 import com.javatechie.crud.example.repository.EmployeeRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,12 +20,12 @@ import java.util.List;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository repository;
-    /*------------------------------------------------------------------------------------------------------------------------------*/
-    public List<Employee> saveEmployee(List<Employee> Employees)
+
+    public Employee addEmployee(Employee employee)
     {
-        return repository.saveAll(Employees);
+
+        return repository.save(employee);
     }
-    /*------------------------------------------------------------------------------------------------------------------------------*/
 
         public List<Employee> getEmployee(int pageNo, int pageSize, String sortBy)
         {
@@ -33,29 +35,42 @@ public class EmployeeService {
             if(pagedResult.hasContent())
             {
                 return pagedResult.getContent();
-            } else
+            }
+            else
             {
                 return new ArrayList<Employee>();
             }
         }
 
-    /*------------------------------------------------------------------------------------------------------------------------------*/
+
 
 
     public String deleteEmployee(int id)
     {
-        repository.deleteById(id);
-        return "Employee removed !! " + id;
+        if(repository.existsById(id)==true)
+        {
+            repository.deleteById(id);
+            return "Employee with employee Id " + id + " removed";
+        }
+        else
+            throw new UserServiceException("Employee with employee ID = " +id+ " does not exist");
     }
-    /*------------------------------------------------------------------------------------------------------------------------------*/
 
-    public Employee updateEmployee(Employee Employee)
+
+    public Employee updateEmployee(Employee employee)
     {
-        Employee existingEmployee = repository.findById(Employee.getId()).orElse(null);
-        existingEmployee.setName(Employee.getName());
-        existingEmployee.setAge(Employee.getAge());
-        existingEmployee.setDepartment(Employee.getDepartment());
-        return repository.save(existingEmployee);
+        if(repository.existsById(employee.getId())==true)
+        {
+            Employee existingEmployee = repository.findById(employee.getId()).orElse(null);
+            existingEmployee.setName(employee.getName());
+            existingEmployee.setAge(employee.getAge());
+            existingEmployee.setDepartment(employee.getDepartment());
+            return repository.save(existingEmployee);
+        }
+        else
+        {
+            throw new UserServiceException("Employee with employee ID = " + employee.getId() + " does not exist");
+        }
     }
 
 
