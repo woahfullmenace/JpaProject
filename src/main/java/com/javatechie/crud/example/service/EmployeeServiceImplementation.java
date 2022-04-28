@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmployeeService {
+public class EmployeeServiceImplementation implements EmployeeServiceInterface {
     @Autowired
     private EmployeeRepository repository;
 
