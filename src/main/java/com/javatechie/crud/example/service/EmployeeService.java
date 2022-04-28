@@ -1,13 +1,17 @@
 package com.javatechie.crud.example.service;
 
+
 import com.javatechie.crud.example.entity.Employee;
 
 import com.javatechie.crud.example.repository.EmployeeRepository;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,23 +24,21 @@ public class EmployeeService {
         return repository.saveAll(Employees);
     }
     /*------------------------------------------------------------------------------------------------------------------------------*/
-    public List<Employee> getEmployees(String filter)
-    {
-        switch(filter)
+
+        public List<Employee> getEmployee(int pageNo, int pageSize, String sortBy)
         {
-            case "id":
-                return repository.findAll(Sort.by(Sort.Direction.ASC,"id"));
-            case "age":
-                return repository.findAll(Sort.by(Sort.Direction.ASC,"age"));
-            case "name":
-                return repository.findAll(Sort.by(Sort.Direction.ASC,"name"));
-            case "dept":
-                return repository.findAll(Sort.by(Sort.Direction.ASC,"department"));
-            default:
-                return repository.findAll();
+            Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
+            Page<Employee> pagedResult = repository.findAll(paging);
+
+            if(pagedResult.hasContent())
+            {
+                return pagedResult.getContent();
+            } else
+            {
+                return new ArrayList<Employee>();
+            }
         }
 
-    }
     /*------------------------------------------------------------------------------------------------------------------------------*/
 
 
