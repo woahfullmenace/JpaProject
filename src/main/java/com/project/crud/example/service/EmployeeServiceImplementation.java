@@ -2,8 +2,10 @@ package com.project.crud.example.service;
 
 
 
+import com.project.crud.example.entity.Department;
 import com.project.crud.example.entity.Employee;
 import com.project.crud.example.handler.UserServiceException;
+import com.project.crud.example.repository.DepartmentRepository;
 import com.project.crud.example.repository.EmployeeRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,24 +22,26 @@ import java.util.List;
 @Service
 public class EmployeeServiceImplementation implements EmployeeServiceInterface {
     @Autowired
-    private EmployeeRepository repository;
+    private EmployeeRepository employeeRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     public Employee addEmployee(@Valid Employee employee)
     {
-        if(repository.existsById(employee.getId()))
+        if(employeeRepository.existsById(employee.getEid()))
         {
-            throw new UserServiceException("Employee with empID  ["+ employee.getId()+"]  already exists" );
+            throw new UserServiceException("Employee with empID  ["+ employee.getEid()+"]  already exists" );
         }
         else
         {
-            return repository.save(employee);
+            return employeeRepository.save(employee);
         }
     }
 
         public List<Employee> getEmployee(int pageNo, int pageSize, String sortBy)
         {
             Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
-            Page<Employee> pagedResult = repository.findAll(paging);
+            Page<Employee> pagedResult = employeeRepository.findAll(paging);
 
             if(pagedResult.hasContent())
             {
@@ -54,9 +58,9 @@ public class EmployeeServiceImplementation implements EmployeeServiceInterface {
 
     public String deleteEmployee(int id)
     {
-        if(repository.existsById(id))
+        if(employeeRepository.existsById(id))
         {
-            repository.deleteById(id);
+            employeeRepository.deleteById(id);
             return "Employee with employee Id [" + id + "] removed";
         }
         else
@@ -66,19 +70,21 @@ public class EmployeeServiceImplementation implements EmployeeServiceInterface {
 
     public Employee updateEmployee(Employee employee)
     {
-        if(repository.existsById(employee.getId()))
+        if(employeeRepository.existsById(employee.getEid()))
         {
-            Employee existingEmployee = repository.findById(employee.getId()).orElse(null);
+            Employee existingEmployee = employeeRepository.findById(employee.getEid()).orElse(null);
             existingEmployee.setName(employee.getName());
             existingEmployee.setAge(employee.getAge());
             existingEmployee.setDepartment(employee.getDepartment());
-            return repository.save(existingEmployee);
+            return employeeRepository.save(existingEmployee);
         }
         else
         {
-            throw new UserServiceException("Employee with employee ID  [" + employee.getId() + "] does not exist");
+            throw new UserServiceException("Employee with employee ID  [" + employee.getEid() + "] does not exist");
         }
     }
+
+
 
 
 }

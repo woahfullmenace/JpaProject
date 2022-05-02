@@ -7,24 +7,20 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "employee")
-public class Employee
+@Table(name = "department")
+public class Department
 {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int eid;
+    @GeneratedValue(strategy =GenerationType.AUTO)
+    private int did;
     @NotBlank
     private String name;
-    @NotNull
-    private int age;
-    @NotBlank
-    private String department;
-
+    @OneToMany(targetEntity = Employee.class,cascade = CascadeType.ALL)
+    private List<Employee> employees;
 }

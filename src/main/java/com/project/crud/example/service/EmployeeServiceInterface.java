@@ -1,6 +1,7 @@
 package com.project.crud.example.service;
 
 
+import com.project.crud.example.entity.Department;
 import com.project.crud.example.entity.Employee;
 
 import java.util.List;
@@ -14,5 +15,6 @@ public interface EmployeeServiceInterface
     String deleteEmployee(int id);
 
     Employee updateEmployee(Employee employee);
+
 
 }
