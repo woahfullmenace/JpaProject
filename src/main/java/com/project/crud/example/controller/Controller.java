@@ -4,19 +4,19 @@ package com.project.crud.example.controller;
 import com.project.crud.example.entity.Department;
 import com.project.crud.example.entity.Employee;
 import com.project.crud.example.service.DepartmentServiceImplementation;
-import com.project.crud.example.service.DepartmentServiceInterface;
+
 import com.project.crud.example.service.EmployeeServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-public class EmployeeController {
+public class Controller {
 
     @Autowired
     private EmployeeServiceImplementation employeeServiceImplementation;
@@ -52,6 +52,19 @@ public class EmployeeController {
 
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
+    @GetMapping("/getDepartment")
+    public ResponseEntity<List<Department>> getDepartment (
+            @RequestParam(defaultValue = "0") Integer pageNo,
+            @RequestParam(defaultValue = "10") Integer pageSize,
+            @RequestParam(defaultValue = "did") String sortBy)
+    {
+        List<Department> DeptList = (List<Department>) departmentServiceImplementation.getDepartment(pageNo, pageSize, sortBy);
+
+        return new ResponseEntity<>(DeptList, HttpStatus.OK);
+    }
+
+
 
 
     @PutMapping("/update")
