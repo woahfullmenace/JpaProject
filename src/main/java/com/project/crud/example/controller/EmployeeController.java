@@ -46,7 +46,7 @@ public class EmployeeController {
     public ResponseEntity<List<Employee>> getEmployee (
             @RequestParam(defaultValue = "0") Integer pageNo,
             @RequestParam(defaultValue = "10") Integer pageSize,
-            @RequestParam(defaultValue = "id") String sortBy)
+            @RequestParam(defaultValue = "eid") String sortBy)
     {
         List<Employee> list = employeeServiceImplementation.getEmployee(pageNo, pageSize, sortBy);
 
