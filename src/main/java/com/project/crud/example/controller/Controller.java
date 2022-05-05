@@ -63,6 +63,11 @@ public class Controller {
 
         return new ResponseEntity<>(DeptList, HttpStatus.OK);
     }
+    @GetMapping("/getDepartmentName")
+    public ResponseEntity<String> getDepartmentName(@RequestParam(required = true) int empId)
+    {
+        return new ResponseEntity<String>(employeeServiceImplementation.getDepartmentName(empId),HttpStatus.OK);
+    }
 
 
 

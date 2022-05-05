@@ -84,7 +84,12 @@ public class EmployeeServiceImplementation implements EmployeeServiceInterface {
         }
     }
 
-
+    @Override
+    public String getDepartmentName(int empId)
+    {
+        String departmentName = employeeRepository.findDepartmentName(empId);
+        return "Employee with empId ["+empId+"] belongs to the department ["+departmentName+"]";
+    }
 
 
 }

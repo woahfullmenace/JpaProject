@@ -17,4 +17,5 @@ public interface EmployeeServiceInterface
     Employee updateEmployee(Employee employee);
 
 
+    String getDepartmentName(int empId);
 }
