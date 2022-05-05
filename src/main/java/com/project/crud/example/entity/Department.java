@@ -16,10 +16,11 @@ import java.util.List;
 public class Department
 {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int did;
     @NotBlank
     private String name;
     @OneToMany(targetEntity = Employee.class,cascade = CascadeType.ALL)
+    @JoinColumn(name="did" , referencedColumnName = "did")
     private List<Employee> employees;
 }

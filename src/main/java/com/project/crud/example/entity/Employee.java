@@ -17,7 +17,7 @@ public class Employee
 {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int eid;
     @NotBlank
     private String name;
