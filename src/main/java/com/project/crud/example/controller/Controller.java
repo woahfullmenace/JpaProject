@@ -6,6 +6,8 @@ import com.project.crud.example.entity.Employee;
 import com.project.crud.example.service.DepartmentServiceImplementation;
 
 import com.project.crud.example.service.EmployeeServiceImplementation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-public class Controller {
+public class Controller
+{
+
 
     @Autowired
     private EmployeeServiceImplementation employeeServiceImplementation;
@@ -28,7 +32,6 @@ public class Controller {
     {
         Employee emp= employeeServiceImplementation.addEmployee(employee);
         return new ResponseEntity<Employee>(emp,HttpStatus.CREATED);
-
     }
 
     @PostMapping("/addDepartment")

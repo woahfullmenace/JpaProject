@@ -1,0 +1,133 @@
+2022-05-05 17:18:24,392 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 8352 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:18:24,397 [DEBUG] com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:18:24,400 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:18:25,140 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-05 17:18:25,234 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 76ms. Found 2 JPA repository interfaces.
+2022-05-05 17:18:25,622 [INFO] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-05 17:18:25,982 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9191 (http)
+2022-05-05 17:18:25,992 [INFO] org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-05-05 17:18:25,992 [INFO] org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.30]
+2022-05-05 17:18:26,129 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-05-05 17:18:26,129 [INFO] org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 1647 ms
+2022-05-05 17:18:26,262 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-05-05 17:18:26,672 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-05-05 17:18:27,569 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOGLOCK
+2022-05-05 17:18:27,582 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOGLOCK
+2022-05-05 17:18:27,582 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT `LOCKED` FROM employee_database.DATABASECHANGELOGLOCK WHERE ID=1
+2022-05-05 17:18:27,602 [INFO] liquibase.lockservice.StandardLockService [main] Successfully acquired change log lock
+2022-05-05 17:18:28,802 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT MD5SUM FROM employee_database.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2022-05-05 17:18:28,802 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOG
+2022-05-05 17:18:28,802 [INFO] liquibase.changelog.StandardChangeLogHistoryService [main] Reading from employee_database.DATABASECHANGELOG
+2022-05-05 17:18:28,802 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT * FROM employee_database.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2022-05-05 17:18:28,822 [INFO] liquibase.lockservice.StandardLockService [main] Successfully released change log lock
+2022-05-05 17:18:28,902 [INFO] org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-05 17:18:28,982 [INFO] org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.10.Final}
+2022-05-05 17:18:29,132 [INFO] org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2022-05-05 17:18:29,242 [INFO] org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-05-05 17:18:29,882 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-05 17:18:29,882 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-05 17:18:30,281 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-05 17:18:30,477 [INFO] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-05 17:18:30,721 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9191 (http) with context path ''
+2022-05-05 17:18:30,729 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 7.002 seconds (JVM running for 7.465)
+2022-05-05 17:19:12,623 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9191-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-05 17:19:12,623 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9191-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-05-05 17:19:12,631 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9191-exec-1] Completed initialization in 8 ms
+2022-05-05 17:21:59,313 [INFO] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-05 17:21:59,321 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-05 17:21:59,321 [INFO] com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-05-05 17:21:59,337 [INFO] com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2022-05-05 17:22:05,469 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 8052 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:22:05,473 [DEBUG] com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:22:05,473 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:22:06,144 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-05 17:22:06,224 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 68ms. Found 2 JPA repository interfaces.
+2022-05-05 17:22:06,537 [INFO] org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-05-05 17:22:06,873 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9191 (http)
+2022-05-05 17:22:06,881 [INFO] org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-05-05 17:22:06,881 [INFO] org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.30]
+2022-05-05 17:22:07,009 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-05-05 17:22:07,009 [INFO] org.springframework.web.context.ContextLoader [main] Root WebApplicationContext: initialization completed in 1480 ms
+2022-05-05 17:22:07,115 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-05-05 17:22:07,467 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-05-05 17:22:08,314 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOGLOCK
+2022-05-05 17:22:08,322 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOGLOCK
+2022-05-05 17:22:08,330 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT `LOCKED` FROM employee_database.DATABASECHANGELOGLOCK WHERE ID=1
+2022-05-05 17:22:08,354 [INFO] liquibase.lockservice.StandardLockService [main] Successfully acquired change log lock
+2022-05-05 17:22:09,578 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT MD5SUM FROM employee_database.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2022-05-05 17:22:09,586 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT COUNT(*) FROM employee_database.DATABASECHANGELOG
+2022-05-05 17:22:09,586 [INFO] liquibase.changelog.StandardChangeLogHistoryService [main] Reading from employee_database.DATABASECHANGELOG
+2022-05-05 17:22:09,586 [INFO] liquibase.executor.jvm.JdbcExecutor [main] SELECT * FROM employee_database.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2022-05-05 17:22:09,602 [INFO] liquibase.lockservice.StandardLockService [main] Successfully released change log lock
+2022-05-05 17:22:09,674 [INFO] org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-05 17:22:09,730 [INFO] org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.10.Final}
+2022-05-05 17:22:09,850 [INFO] org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2022-05-05 17:22:09,930 [INFO] org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-05-05 17:22:10,457 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-05 17:22:10,457 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-05 17:22:10,817 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-05 17:22:10,937 [INFO] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-05 17:22:11,161 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9191 (http) with context path ''
+2022-05-05 17:22:11,161 [INFO] com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 6.238 seconds (JVM running for 6.634)
+2022-05-05 17:23:41,325 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9191-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-05 17:23:41,325 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9191-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-05-05 17:23:41,333 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9191-exec-1] Completed initialization in 8 ms
+2022-05-05 17:24:22,684 [ERROR] com.project.crud.example.controller.Controller [http-nio-9191-exec-3]  WRONG ID GIVEN
+2022-05-05 17:24:22,710 [ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-9191-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.project.crud.example.handler.UserServiceException: Employee with empID  [7]  already exists] with root cause
+com.project.crud.example.handler.UserServiceException: Employee with empID  [7]  already exists
+	at com.project.crud.example.service.EmployeeServiceImplementation.addEmployee(EmployeeServiceImplementation.java:39)
+	at com.project.crud.example.controller.Controller.addEmployee(Controller.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-05-05 17:26:44,446 [INFO] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-05 17:26:44,446 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-05 17:26:44,456 [INFO] com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-05-05 17:26:44,476 [INFO] com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

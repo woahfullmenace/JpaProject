@@ -2,11 +2,14 @@ package com.project.crud.example.service;
 
 
 
+import com.project.crud.example.controller.Controller;
 import com.project.crud.example.entity.Department;
 import com.project.crud.example.entity.Employee;
 import com.project.crud.example.handler.UserServiceException;
 import com.project.crud.example.repository.DepartmentRepository;
 import com.project.crud.example.repository.EmployeeRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,8 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImplementation implements EmployeeServiceInterface {
+    Logger logger = LoggerFactory.getLogger(Controller.class);
+
     @Autowired
     private EmployeeRepository employeeRepository;
     @Autowired
@@ -30,10 +35,12 @@ public class EmployeeServiceImplementation implements EmployeeServiceInterface {
     {
         if(employeeRepository.existsById(employee.getEid()))
         {
+            logger.error(" ID WHICH ALREADY EXISTS IS GIVEN");
             throw new UserServiceException("Employee with empID  ["+ employee.getEid()+"]  already exists" );
         }
         else
         {
+            logger.debug("SUCCESSFULLY SAVED employee RECORD");
             return employeeRepository.save(employee);
         }
     }
@@ -87,8 +94,14 @@ public class EmployeeServiceImplementation implements EmployeeServiceInterface {
     @Override
     public String getDepartmentName(int empId)
     {
-        String departmentName = employeeRepository.findDepartmentName(empId);
-        return "Employee with empId ["+empId+"] belongs to the department ["+departmentName+"]";
+        if(employeeRepository.existsById(empId)) {
+            String departmentName = employeeRepository.findDepartmentName(empId);
+            return "Employee with empId [" + empId + "] belongs to the department [" + departmentName + "]";
+        }
+        else
+        {
+            throw new UserServiceException("Employee with employee ID  ["+empId+"] does not exist");
+        }
     }
 
 

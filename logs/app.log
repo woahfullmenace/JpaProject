@@ -1,0 +1,73 @@
+2022-05-05 17:35:55,056 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 2940 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:35:55,056 DEBUG com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:35:55,066 INFO com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:36:01,183 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 6.588 seconds (JVM running for 7.173)
+2022-05-05 17:37:38,048 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 4668 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:37:38,048 DEBUG com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:37:38,048 INFO com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:37:45,956 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 8.436 seconds (JVM running for 9.001)
+2022-05-05 17:42:15,285 ERROR com.project.crud.example.controller.Controller [http-nio-9191-exec-8]  WRONG ID GIVEN
+2022-05-05 17:42:15,293 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-9191-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.project.crud.example.handler.UserServiceException: Employee with empID  [7]  already exists] with root cause
+com.project.crud.example.handler.UserServiceException: Employee with empID  [7]  already exists
+	at com.project.crud.example.service.EmployeeServiceImplementation.addEmployee(EmployeeServiceImplementation.java:39)
+	at com.project.crud.example.controller.Controller.addEmployee(Controller.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-05-05 17:44:01,077 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 16624 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:44:01,077 DEBUG com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:44:01,077 INFO com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:44:07,122 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 6.537 seconds (JVM running for 7.094)
+2022-05-05 17:46:42,690 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Starting SpringBootCrudExample2Application on LAPTOP-VGTKI5ED with PID 20540 (C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master\target\classes started by shrey in C:\Users\shrey\Desktop\PROJECTS\spring-boot-crud-example-master)
+2022-05-05 17:46:42,701 DEBUG com.project.crud.example.SpringBootCrudExample2Application [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2022-05-05 17:46:42,701 INFO com.project.crud.example.SpringBootCrudExample2Application [main] No active profile set, falling back to default profiles: default
+2022-05-05 17:46:48,462 INFO com.project.crud.example.SpringBootCrudExample2Application [main] Started SpringBootCrudExample2Application in 6.259 seconds (JVM running for 6.833)
+2022-05-05 17:47:00,305 DEBUG com.project.crud.example.controller.Controller [http-nio-9191-exec-2] SUCCESSFULLY SAVED employee RECORD
+2022-05-05 17:48:05,250 DEBUG com.project.crud.example.controller.Controller [http-nio-9191-exec-5] SUCCESSFULLY SAVED employee RECORD
